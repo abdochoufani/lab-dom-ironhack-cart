@@ -7,8 +7,10 @@ function deleteItem(e) {
 function getPriceByProduct(itemNode) {
   var price = document.getElementsByClassName("price");
   var quantity = document.getElementsByTagName("input");
+  var priceTotal=document.getElementsByClassName("product-price")[itemNode];
   var realPrice = Number(price[itemNode].innerText.replace(/[^0-9.-]+/g, ""));
   var finalPrice = realPrice * quantity[itemNode].value;
+  priceTotal.innerText="$" + finalPrice;
   return finalPrice;
 
 }
@@ -51,11 +53,15 @@ function createNewItemRow(itemName, itemUnitPrice) {
   inputQuantity.setAttribute("min", "0")
   inputQuantity.setAttribute("step", "1");
   label.append(inputQuantity);
+  var product=document.createElement("span");
+  product.setAttribute("class","product-price");
+  product.innerText="$0"
   var deleteBtn = document.createElement("button");
   deleteBtn.setAttribute("class", "btn btn-delete");
   deleteBtn.innerText = "delete";
   deleteBtn.addEventListener("click", deleteItem);
   item.append(label);
+  item.append(product);
   item.append(deleteBtn);
   list.append(item);
 
