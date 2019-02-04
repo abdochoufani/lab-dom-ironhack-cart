@@ -1,7 +1,26 @@
-input {
-  border: solid 1px black;
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+
+body, html {
+  font-family: 'Ubuntu', sans-serif;
 }
 
+
+h1 {
+  text-align: center;
+}
+
+
+input {
+  border: solid 2px black;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+#create-new-item input {
+  border-radius: 15px;
+  padding: 5px;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +57,27 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+
+.shopping-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+
+.total-price-container {
+  margin-top:50px;
+  text-align: center;
+}
+
+
+#create-new-item{
+  display: flex;
+  border: 3px solid #5cb85c;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 100px;
+  justify-content: space-evenly;
 }
